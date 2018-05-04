@@ -1,4 +1,3 @@
-#
 # Copyright 2018, Muhammad Amirrul Al Hafiz Bin Mohd Zukry,
 # This software is released under the terms of the
 # GNU LGPL license. See http://www.gnu.org/licenses/lgpl.html
