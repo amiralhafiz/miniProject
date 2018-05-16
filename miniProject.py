@@ -26,8 +26,10 @@ import prettytable
 #=====================================================================================================================#
 def main():
 
+    (pOrderNumber) = static_PurchaseOrderNumber()
+
     (date, pOName, purchaseOrderNo, companyName, addressOne, addressTwo, pastCode, city, state, tel,
-     fax) = static_Info()
+     fax) = static_Info(pOrderNumber)
     
     print_Info(date, pOName, purchaseOrderNo, companyName, addressOne, addressTwo, pastCode, city, state, tel, fax)
     (staffName) = get_Input_Staff()
@@ -52,13 +54,22 @@ def main():
     display_Output(txtName)
 
 #=====================================================================================================================#
+# Define Purchase Order No Generator
+#=====================================================================================================================#
+def static_PurchaseOrderNumber():
+
+    pOrderNumber = datetime.datetime.now().strftime("%s-%d%m%Y")
+    
+    return (pOrderNumber)
+
+#=====================================================================================================================#
 # Define Static Info
 #=====================================================================================================================#
-def static_Info():
+def static_Info(pOrderNumber):
 
     date = datetime.datetime.now().strftime("%d/%m/%Y")
     pOName = ("PURCHASE ORDER")
-    purchaseOrderNo = datetime.datetime.now().strftime("%s-%d%m%Y")
+    purchaseOrderNo = pOrderNumber
     companyName = ("GEOHARBOUR SDN BHD")
     addressOne = ("C-26-06, 3 Two Square,")
     addressTwo = ("2, Jalan 19/1,")
